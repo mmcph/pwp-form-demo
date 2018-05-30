@@ -17,6 +17,8 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<!--RECAPTCHA-->
+		<script src='https://www.google.com/recaptcha/api.js'></script>
 
 		<title>PWP Form Demo</title>
 	</head>
@@ -34,7 +36,7 @@
 					<div class="col-md-6">
 
 						<!-- BEGIN CONTACT FORM -->
-						<form id="demo-form">
+						<form id="demo-form" method="post" action="php/mailer.php">
 							<div class="form-group">
 								<label for="demoName">Name</label>
 								<div class="input-group">
@@ -71,12 +73,15 @@
 									<textarea name="demoMessage" rows="5" id="demoMessage" class="form-control" placeholder="Your Message (2000 characters max)"></textarea>
 								</div>
 							</div>
+<!--							RECAPTCHA-->
+							<div class="g-recaptcha" data-sitekey="6LenZlwUAAAAACHelIgj395loGCGGoFSmmm1IGUq"></div>
 
 							<button class="btn btn-info" type="submit">Submit</button>
 							<button class="btn btn-default" type="reset">Reset</button>
+
 						</form>
 						<!-- END CONTACT FORM-->
-
+						<div id="output-area"></div>
 					</div><!-- /.col-sm-6 -->
 				</div><!-- /.row -->
 			</main>
